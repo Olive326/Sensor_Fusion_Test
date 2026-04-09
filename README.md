@@ -7,20 +7,20 @@
 
 ## Code structure
 Sensor_Fusion_Test/
-|-Dockerfile
-|-README
-|-src/
-|     |-sensor_fusion_pkg/
-|     |  -launch/
-|     |       -fusion_launch.py
-|     |  -sensor_fusion_pkg/
-|     |       -__init__.py
-|     |       -fused_data.py
-|     |       -fake_imu.py # test unitity
-|     |       -fake_depth.py  # test unitity
-|     |-package.xml
-|     |-setup.cfg
-|     |-setup.py
+├── Dockerfile
+├── README.md
+└── src/
+    └── sensor_fusion_pkg/
+        ├── launch/
+        │   └── fusion_launch.py
+        ├── sensor_fusion_pkg/
+        │   ├── __init__.py
+        │   ├── fused_data.py        # core EKF fusion node
+        │   ├── fake_imu.py          # test utility — simulates IMU at 100Hz
+        │   └── fake_depth.py        # test utility — simulates depth sensor at 40Hz
+        ├── package.xml
+        ├── setup.cfg
+        └── setup.py
     
 
 ## How to run the node
