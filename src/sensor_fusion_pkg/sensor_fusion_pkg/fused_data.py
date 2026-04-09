@@ -2,7 +2,7 @@ import rclpy
 import numpy as np
 from rclpy.node import Node
 
-from sensor_msgs.msg import Imu, FluidPressure
+from sensor_msgs.msg import Imu
 from std_msgs.msg import Float32
 
 
@@ -55,7 +55,7 @@ class FusionNode(Node):
 
         # two subscribes-imu & depth sensor
         self.imu_sub = self.create_subscription(Imu, '/imu/data', self.imu_callback, 10)
-        self.depth_sub = self.create_subscription(FluidPressure, '/depth', self.depth_callback, 10)
+        self.depth_sub = self.create_subscription(Float32, '/depth', self.depth_callback, 10)
 
         # One publisher- fused data
         self.vel_pub_ = self.create_publisher(Float32, '/vertical_velocity', 10)
@@ -70,7 +70,7 @@ class FusionNode(Node):
         self.ekf.predict(self.latest_accel_z)
 
     def depth_callback(self, msg):
-        self.latest_depth = msg.fluid_pressure / (1000.0 * 9.81) # convert to meter
+        self.latest_depth = msg.data
         self.ekf.update(self.latest_depth)
 
         vel_z_msg = Float32()
