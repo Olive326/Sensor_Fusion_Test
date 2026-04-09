@@ -6,38 +6,8 @@
 - vertical_velocity
 
 ## Code structure
-Sensor_Fusion_Test/
-├── Dockerfile
-├── README.md
-├── src/
-│   │   └── sensor_fusion_pkg/
-│           ├── launch/
-│           |   └── fusion_launch.py
-│           ├── sensor_fusion_pkg/
-│           │           ├── __init__.py
-│           │           ├── fused_data.py        # core EKF fusion node
-│           │   ├── fake_imu.py          # test utility — simulates IMU at 100Hz
-│           │   └── fake_depth.py        # test utility — simulates depth sensor at 40Hz
-│           ├── package.xml
-│           ├── setup.cfg
-│           └── setup.py
+<img width="400" height="200" alt="Screenshot from 2026-04-09 10-23-30" src="https://github.com/user-attachments/assets/2fab6c9f-a404-420f-84d8-f043f13bfc46" />
 
-Sensor_Fusion_Test/
-├── Dockerfile
-├── README.md
-└── src/
-    └── sensor_fusion_pkg/
-        ├── launch/
-        │   └── fusion_launch.py
-        ├── sensor_fusion_pkg/
-        │   ├── __init__.py
-        │   ├── fused_data.py        # core EKF fusion node
-        │   ├── fake_imu.py          # test utility — simulates IMU at 100Hz
-        │   └── fake_depth.py        # test utility — simulates depth sensor at 40Hz
-        ├── package.xml
-        ├── setup.cfg
-        └── setup.py
-    
 
 ## How to run the node
 ### Step1 - Buid
